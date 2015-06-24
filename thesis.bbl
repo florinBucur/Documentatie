@@ -1,0 +1,38 @@
+\begin{thebibliography}{1}
+
+\bibitem{xabber}
+\url{http://www.xabber.com}.
+
+\bibitem{beem}
+\url{http://beem-project.com/projects/beem/wiki}.
+
+\bibitem{apg}
+\url{http://www.thialfihar.org/projects/apg}.
+
+\bibitem{pgpsms}
+\url{https://play.google.com/store/apps/details?id=com.woodkick.pgpsms&hl=en}.
+
+\bibitem{pgpviewer}
+\url{https://play.google.com/store/apps/details?id=com.symantec.pgpviewersymantec&hl=en}.
+
+\bibitem{marketShare}
+\url{http://www.androidcentral.com/best-android-phones}.
+
+\bibitem{Borisov:2004:OCW:1029179.1029200}
+Nikita Borisov, Ian Goldberg, and Eric Brewer.
+\newblock Off-the-record communication, or, why not to use pgp.
+\newblock In {\em Proceedings of the 2004 ACM Workshop on Privacy in the
+  Electronic Society}, WPES '04, pages 77--84, New York, NY, USA, 2004. ACM.
+
+\bibitem{Dworkin:2001:SER:2206247}
+Morris~J. Dworkin.
+\newblock Sp 800-38a 2001 edition. recommendation for block cipher modes of
+  operation: Methods and techniques.
+\newblock Technical report, Gaithersburg, MD, United States, 2001.
+
+\bibitem{Miller:2009:AES:1823209}
+Frederic~P. Miller, Agnes~F. Vandome, and John McBrewster.
+\newblock {\em Advanced Encryption Standard}.
+\newblock Alpha Press, 2009.
+
+\end{thebibliography}

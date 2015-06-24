@@ -1,0 +1,95 @@
+\chapter{Tehnologii folosite}
+
+\^{I}n acest capitol se introduce sistemul de operare Android, arhitectura sa \c{s}i func\c{t}ionalit\u{a}\c{t}ile puse la dispozi\c{t}ie de acesta. De asemenea sunt prezentate \c{s}i detalii referitoare la libr\u{a}ria oferit\u{a} de Facebook pentru dezvoltarea de aplica\c{t}ii Android care interac\c{t}ioneaz\u{a} cu re\c{t}eaua de socializare. Tot \^{i}n acest capitol  se vor reg\u{a}sii am\u{a}nunte legate de pa\c{s}ii ce trebuie urma\c{t}i pentru creare unei aplica\c{t}ii  Facebook.
+
+\section{Android}
+
+\subsection{Prezentare general\u{a}}
+Android este un sistem de operare creat pentru dispozitivele mobile, cum ar fi smartphone-uri \c{s}i tablete. Acest sistem este creat \c{s}i promovat de Google. De asemenea acest sistem de operare este disponibil pe mai multe tipuri de dispozitive, produse de un numar mare de companii \cite{marketShare}.
+
+	Android este bazat pe o versiune modificata de Linux, \^{i}mprumut\^{a}nd tehnologii care se ocup\u{a} de gestiunea componentelor hardware, a memoriei sau a proceselor. Tot odat\u{a} folose\c{s}te biblioteci Java pentru partea de grafic\u{a}, telefonie sau pentru partea de conectivitate.
+
+	Un aspect important al acestui sistem de operare este faptul c\u{a} este un produs open-source, deci produc\u{a}torii de dispozitive mobile, pot modifica sistemul de operare astfel \^{i}nc\^{a}t, s\u{a} se poat\u{a} folosi extensii ale hardware-ului, de\c{s}i sistemul de operare de baz\u{a} nu ofer\u{a} suport pentru aceste extensii.
+
+\^{I}n aceast\u{a} sec\c{t}iune se vor introduce mai \^{i}nt\^{a}i arhitectura Android \c{s}i apoi se vor detalia componentele sale utilizate.
+\subsection{Arhitectura Android}
+
+Arhitectura Android este compus\u{a} din patru elemente importante: Linux Kernel, Libr\u{a}rii, FrameWorks \c{s}i Aplica\c{t}ii. \^{I}n continuare vom detalia fiecare nivel al arhitecturii folosindu-ne \c{s}i de Figura \ref{img:Android-ARH}.
+
+	Primul nivel este Linux Kernel, care este folosit pentru comunica\c{t}ia dintre componentele hardware \c{s}i componentele software. 
+
+	Urm\u{a}torul nivel al arhitecturii este reprezentat de libr\u{a}riile de baz\u{a}. Aceste libr\u{a}rii sunt scrise \^{i}n limbajele de programare C/C++. Aici g\u{a}sim libr\u{a}riile pentru grafic\u{a}, pentru baze de date, pentru browser-ul WEB.
+
+	Android RunTime este compus din ma\c{s}ina virtual\u{a} Dalvik \c{s}i de libr\u{a}rii ale procesorului.
+
+	Frameworks, este scris \^{i}n totalitate \^{i}n limbajul Java \c{s}i este folosit pentru dezvoltarea de aplica\c{t}ii Android.
+	
+	Ultimul nivel este reprezentat de aplica\c{t}iile Android. Acesta este nivelul cel mai \^{i}nalt, aici g\u{a}sindu-se aplica\c{t}ii precum cele pentru contacte, jocuri sau browser-ul. 
+	
+\fig[scale=0.5]{src/img/Android-ARH.png}{img:Android-ARH}{Arhitectura Android}
+
+
+\subsection{Event Bus}
+
+Event Bus ofer\u{a} o modalitate optimizat\u{a} \c{s}i simplificat\u{a} de a comunica \^{i}ntre activit\u{a}\c{t}i, fragmente, fire de execu\c{t}ie sau servicii Android. Folosind aceast\u{a} libr\u{a}rie se optimizeaz\u{a} procesul de dezvoltare, iar calitatea comunica\c{t}iei este mai bun\u{a} dec\^{a}t \^{i}n cazul comunica\c{t}iei standard. Principiul de func\c{t}ionare Event Bus este descris \^{i}n Figura \ref{img:EventBus}.
+
+\fig[scale=0.5]{src/img/EventBus.pdf}{img:EventBus}{Principiul de func\c{t}ionare Event Bus}
+
+\subsection{Notification Listener Service}
+
+Notification Listener Service, este un serviciu folosit pentru gestionarea notific\u{a}rilor. Cu ajutorul lui la primirea sau recep\c{t}ionarea unor notific\u{a}ri se pot declan\c{s}a activit\u{a}\c{t}i bazate pe datele care vin odat\u{a} cu notific\u{a}rile.
+
+	Acest serviciu se folose\c{s}te de un obiect StatusBarNotification, prin intermediul c\u{a}ruia se primesc informa\c{t}iile necesare despre notific\u{a}rile existente.
+
+	Pentru a putea folosi acest serviciu, utilizatorul trebuie s\u{a} activeze op\c{t}iunea de a permite aplica\c{t}iei s\u{a} se foloseasc\u{a} de notific\u{a}rile primite \^{i}n sistem. Op\c{t]}iunea se gase\c{s}te \^{i}n calea "Settings > Security > Notification access"
+
+Comunica\c{t}ia dintre acest serviciu \c{s}i activitatea care prelucreaz\u{a} informa\c{t}iile primite odat\u{a} cu notific\u{a}rile se realizeaz\u{a} cu ajutorul libr\u{a}riei Event Bus, prezentat\u{a} mai sus.
+
+\subsection{Recycler View}
+
+RecyclerView reprezint\u{a} o versiune mult mai flexibil\u{a} fa\c{t}\u{a} de ListView, folosit\u{a} pentru a afi\c{s}a pe ecran o list\u{a} cu un num\u{a}r mare de elemente, dar \^{i}ntr-o modalitate mult mai eficient\u{a} fa\c{t}\u{a} de ListView.
+
+	Elementele listei nu sunt \^{i}nc\u{a}rcate toate \^{i}n memorie, ci doar cele afi\c{s}ate. Se pot ad\u{a}ga elemente sau \c{s}terge elemente foarte u\c{s}or \c{s}i \^{i}ntr-un mod dinamic, exist\^{a}nd \^{i}n mod implicit activate anima\c{t}ii pentru evenimentele de ad\u{a}gare sau \c{s}tergere de elemente.  
+
+
+\section{Facebook SDK}
+
+\subsection{Prezentare general\u{a}}
+\label{facebookSDK}
+Facebook, este una dintre cele mai mari \c{s}i importante re\c{t}ele de socializare din prezent. Platforma Facebook, este disponibil\u{a} pe toate tipurile de dispozitive, av\^{a}nd suport pentru majoritatea sistemelor de operare.
+
+	Cu ajutorul Facebook SDK, se pot crea aplica\c{t}ii care implic\u{a} autentificarea \^{i}n re\c{t}eaua de socializare \c{s}i se pot folosii anumite func\c{t}ionalit\u{a}\c{t}i ale platformei, direct din aplica\c{t}iile care nu sunt create de Facebook. De exemplu, putem crea o aplica\c{t}ie care s\u{a} ofere posibilitatea de a posta un mesaj pe wall-ul personal. 
+
+	Pentru a folosi Facebook SDK, este necesar un cont de Facebook, \^{i}n care se creaz\u{a} o nou\u{a} aplica\c{t}ie. Se alege un nume al aplica\c{t}iei \c{s}i se genereaz\u{a} un identificator unic al aplica\c{t}iei care arat\u{a} ca \^{i}n Figura \ref{img:APP-ID}. Pentru ca aplica\c{t}ia s\u{a} fie func\c{t}ional\u{a}, acest id unic trebuie inclus in codul acesteia. Dup\u{a} ce id-ul aplica\c{t}iei este ob\c{t}inut, trebuie s\u{a} includem \^{i}n proiect SDK-ul oferit de Facebook \c{s}i setat id-ul. 
+
+\fig[scale=0.5]{src/img/appid.png}{img:APP-ID}{ID-ul aplica\c{t}iei}
+
+	Pe l\^{a}ng\u{a} toate acestea, este necesar\u{a} o cheie pentru dezvoltare \c{s}i una pentru publicarea aplica\c{t}iei. Acestea pot fi identice \c{s}i sunt reprezentate \^{i}n Figura \ref{img:Dev-Key}.
+
+\fig[scale=0.5]{src/img/devkey.png}{img:Dev-Key}{Cheia pentru dezvoltare}
+
+	Fiecare sesiune deschis\u{a}, are asociat un token de acces. Acesta poate sa difere de la sesiune la sesiune, chiar dac\u{a} este vorba despre acela\c{s}i user. Access token-ul este generat \^{i}n func\c{t}ie de permisiunile cerute de aplica\c{t}ie sau de modific\u{a}rile ap\u{a}rute \^{i}n profilul utilizatorului. Acest token este o modalitate de identificare, dar \c{s}i de securizare a sesiunilor. Un exemplu de token este prezent \^{i}n Figura \ref{img:Token}.
+
+\fig[scale=0.5]{src/img/token.png}{img:Token}{Token de acces}
+
+	Un alt aspect important al SDK-ului de Facebook, este faptul ca s-au introdus dou\u{a} tipuri de id-uri ale utilizatorului. Astfel, pentru un utilizator, exist\u{a} un id, global sau real \c{s}i un id unic pentru fiecare aplica\c{t}ie cu ajutorul careia s-a autentificat. Cu aceste id-uri unice per aplica\c{t}ie se limiteaz\u{a} accesul la anumite func\c{t}ionalit\u{a}\c{t}i. De exemplu, deschiderea unui ferestre de Facebook Messenger, direct pentru un utilizator specific, nu este posibil\u{a}, pentru c\u{a} id-ul acestuia nu este cel global, iar aplica\c{t}ia nativ\u{a} de Facebook Messenger, nu va recunoa\c{s}te id-ul. 
+
+	La \^{i}nceputul acestei practici, de a pune la dispozi\c{t}ie dezvoltatorilor de aplica\c{t}ii, func\c{t}ionalit\u{a}\c{t}ile re\c{t}elei de socializare, a fost un lucru bine v\u{a}zut de toat\u{a} lumea. Cu timpul, securitatea datelor personale \c{s}i intimitatea utilizatorilor au reprezentat ni\c{s}te puncte de reper foarte importante pentru evolu\c{t}ia SDK-urilor. \^{I}n momentul scrierii acestei lucr\u{a}ri de licen\c{t}\u{a}, cel mai recent SDK este Facebook SDK 4.2.0. 
+	
+	De anul acesta Facebook, a renun\c{t}at la ideea de a l\u{a}sa dezvoltatorii s\u{a} i\c{s}i fac\u{a} propriile lor aplica\c{t}ii pentru schimbul de mesaje private. Prin aceste limit\u{a}ri, se pot evita aplica\c{t}iile robot, care fac spam \c{s}i nu sunt utile cu nimic. O alt\u{a} modalitate de a evita spam-ul este de a for\c{t}a folosirea aplica\c{t}iilor native pentru anumite opera\c{t}ii.
+\subsection{Graph API}
+	Principala metod\u{a} de a ob\c{t}ine, \c{s}terge sau ad\u{a}uga informa\c{t}ii \^{i}n re\c{t}eaua de socializare, este Graph API. Graph API este un API de nivel jos, bazat pe protocolul de comunica\c{t}ie, HTTP. Denumirea acestuia vine de la ideea de graf social, \^{i}n care g\u{a}sim elemente cum ar fi, noduri, muchii sau c\^{a}mpuri de informa\c{t}ii. Nodurile reprezint\u{a} lucruri de tipul utilizator, fotografie sau comentariu. Muchiile reprezint\u{a} conexiunile dintre noduri, ca de exemplu fotografiile dintr-o pagin\u{a}. C\^{a}mpurile de informa\c{t}ii reprezint\u{a} descrierea nodurilor, de exemplu ziua de na\c{s}tere a unui utilizator sau numele unei pagini.
+	
+	Graph API poate fi folosit cu orice limbaj de programare ce ofer\u{a} suport pentru cereri HTTP. Pentru a ob\c{t}ine informa\c{t}ii de pe platforma Facebook, trebuie creat\u{a} o cerere GET. Pentru a adaug\u{a} mesaje, imagini, link-uri sau orice alte date, se folose\c{s}te cereri de tip POST, iar pentru a \c{s}terge date, se folose\c{s}te o cerere special\u{a}, DELETE. Fiecare cerere Graph API necesit\u{a} un token de acces. Token-ul de acces este cel ob\c{t}inut prin implementarea autentific\u{a}rii \^{i}n re\c{t}eaua de socializare.
+	
+	Versiunea actual\u{a} de Graph API este 2.3. Pentru c\u{a} exist\u{a} mai multe versiuni, se poate specifica \^{i}n cereri versiunea de API folosit\u{a}. Totu\c{s}i, este indicat s\u{a} se foloseasc\u{a} ultima versiune, deoarece, func\c{t}ionalit\u{a}\c{t} din cele vechi pot disp\u{a}rea sau se pot modifica.	
+
+	O cerere GET folosind Graph API este de forma https://graph.facebook.com/v2.3/{node-id}/{edge-name}, unde node-id reprezint\u{a} identificatorul nodului, de exemplu id-ul unui prieten, iar edge-name poate fi "photos" pentru pozele acelui prieten. Datele \^{i}ntoarse de Facebook ajung \^{i}n format JSON, put\^{a}nd fi parsate foarte u\c{s}or.
+	
+	O cerere POST folosind Graph API, poate fi de forma https://graph.facebook.com/v2.3/{node-id}/{edge-name}, unde node-id poate fi identificatorul unui grup, iar edge-name poate fi \c{s}irul de caractere "members". Aceast\u{a} cerere are nevoie s\u{a} i se adauge un c\u{a}mp extra, cum ar fi "member", acestui c\^{a}mp av\u{a}nd asociat ca valoare identificatorul unei persoane care va fi ad\u{a}ugat\u{a} \^{i}n grup. 
+	
+	\^{I}n cazul \^{i}n care se dore\c{s}te \c{s}tergerea unui element de pe re\c{t}eaua de socializare, cerearea arat\u{a} similar cu cea de POST, dar \^{i}n loc s\u{a} se specifice metoda POST, se va seta ca metod\u{a} folosit\u{a} cea de DELETE.
+
+
+
+

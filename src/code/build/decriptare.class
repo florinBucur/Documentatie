@@ -1,0 +1,5 @@
+byte[] cipherText = android.util.Base64.decode(text.getBytes("UTF-8"), android.util.Base64.DEFAULT);
+Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+SecretKeySpec key = new SecretKeySpec(encryptionKey.getBytes("UTF-8"), "AES");
+cipher.init(Cipher.DECRYPT_MODE, key,new IvParameterSpec(IV.getBytes("UTF-8")));
+String result = new String(cipher.doFinal(cipherText));

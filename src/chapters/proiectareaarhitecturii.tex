@@ -1,0 +1,27 @@
+\chapter{Proiectarea arhitecturii}
+
+Aceast\u{a} aplica\c{t}ie are rolul de a aduce un plus de securitate interac\c{t}iunilor online. \^{I}n acest caz este vorba de criptarea mesajelor private transmise prin intermediul unei re\c{t}ele de socializare, dar \c{s}i a post\u{a}rilor din anumite spa\c{t}ii private de comunicare.
+
+Datele criptate sunt transmise pe acelea\c{s}i canale folosite \c{s}i de datele necriptate. Astfel, aplica\c{t}ia creaz\u{a} puncte de acces la platforma re\c{t}elei de socializare, dar \^{i}n cazul \^{i}n care securitatea este compromis\u{a}, informa\c{t}iile considerate de utilizator importante vor r\u{a}m\^{a}ne indescifrabile.
+
+\fig[scale=0.5]{src/img/App-Arh.pdf}{img:App-Arh}{Arhitectură}
+
+\section{Conectarea la re\c{t}eaua social\u{a}}
+
+Utilizarea aplica\c{t}iei presupune ca utilizatorul s\u{a} de\c{t}in\u{a} un cont pe re\c{t}eaua de socializare, cu ale c\u{a}rui creden\c{t}iale se poate realiza autentificarea. \^{I}n cazul \^{i}n care contul este setat deja \^{i}n sistemul de operare, acesta se preia automat de c\u{a}tre aplica\c{t}ie \c{s}i se autentific\u{a} utilizatorul. De asemenea, este necesar ca dispozitivul s\u{a} aib\u{a} instalat\u{a} aplica\c{t}ia nativ\u{a} pus\u{a} la dispozi\c{t}ie de platforma re\c{t}elei.
+
+Procesul de autentificare printr-o alt\u{a} aplica\c{t}ie dec\^{a}t cea nativ\u{a} necesit\u{a} permisiunea utilizatorului de a accesa anumite date din contul s\u{a}u. Dac\u{a} utilizatorul este de acord cu accesarea datelor de c\u{a}tre aplica\c{t}ie, \^{i}nseamn\u{a} ca procesul s-a terminat cu succes.
+
+Dac\u{a} autentificare s-a \^{i}ncheiat cu succes, aplica\c{t}ia prime\c{s}te din partea platformei re\c{t}elei sociale un token de acces, care a fost decris \^{i}n sec\c{t}iunea \ref{facebookSDK}. Cu acesta se vor deschide noi sesiuni de comunica\c{t}ie \^{i}ntre aplica\c{t}ia client \c{s}i re\c{t}eaua de socializare.
+
+Dac\u{a} autentificarea s-a \^{i}ncheiat cu succes, utilizatorul poate beneficia de func\c{t}ionalit\u{a}\c{t}ile disponibile. Pentru \^{i}nceput se va afi\c{s}a lista de prieteni care, de asemenea folosesc aceast\u{a} aplica\c{t}ie. Prin selectarea unui prieten, se va deschide o nou\u{a} activitate de unde se pot ini\c{t}ia conversa\c{t}ii sau gestiona grupuri.
+
+Pentru a ini\c{t}ia o conversa\c{t}ie este nevoie de aplica\c{t}ia nativ\u{a} de Messenger a re\c{t}elei de socializare. Mesajul de ini\c{t}iere este "Hello", alt tip de mesaj este ignorat. \^{I}n momentul \^{i}n care mesajul ajunge la destinatar, apare mesajul Hello \c{s}i se \c{s}tie c\u{a} se poate \^{i}ncepe schimbul de mesaje criptate. Cel care a primit mesajul, poate r\u{a}spunde prin completarea unui c\^{a}mp text, ulterior ap\u{a}s\^{a}nd pe un buton.
+
+
+
+\section{Grupuri protejate}
+
+\section{Partajare chei}
+
+\section{Conversa\c{t}ii criptate}

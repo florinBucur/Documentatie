@@ -1,0 +1,63 @@
+\chapter{Aplica\c{t}ii similare}
+
+\section{OTR}
+
+Criptarea OTR (Off-the-Record), este un protocol criptografic folosit pentru securizarea canalelor de comunica\c{t}ie. Este \^{i}nt\^{a}lnit \^{i}n special \^{i}n aplica\c{t}iile care presupun schimb de mesaje. Acest model de criptare poate fi folosit peste orice protocol de mesagerie, precum Yahoo Messenger, Facebook Messenger, Google Talk. 
+
+OTR folose\c{s}te chei de criptare simetrice, aceea\c{s}i cheie \c{s}i pentru criptare \c{s}i pentru decriptare. Procesul este reprezentat \^{i}n figura \ref{img:OTR-schema}. Datorit\u{a} faptului c\u{a}, nu se pot trimite cheile pe un canal considerat nesigur, se aplic\u{a} algoritmul Diffie-Hellman pentru schimbul de chei. Astfel schimbul de chei se face \^{i}n a\c{s}a fel \^{i}nc\^{a} un eventual atacator care intercepteaz\u{a} mesajele de pe canalul de comunica\c{t}ie, nu poate descifra mesajul pentru ca nu are acces la cheile folosite pentru criptarea mesajelor\cite{Borisov:2004:OCW:1029179.1029200}.
+
+\fig[scale=0.5]{src/img/OTR-schema.pdf}{img:OTR-schema}{Criptarea OTR}
+
+	Un alt aspect bun, din punct de vedere al securit\u{a}\c{t}ii, este faptul c\u{a} pentru fiecare mesaj nou transmis, cheia de criptare este schimbat\u{a}. Deci, chiar dac\u{a} cineva ar avea acces la schimbul de mesaje, pentru acesta ar fi imposibil s\u{a} descifreze con\c{t}inutul.
+
+	O problem\u{a} a protocolului o reprezint\u{a} faptul c\u{a} nu se folosesc semn\u{a}turi digitale, astfel este imposibil de demonstrat dac\u{a} cineva a reu\c{s}it s\u{a} falsifice ni\c{s}te mesaje. Aceast\u{a} problem\u{a} se poate rezolva prin introducerea conceptului de autentificare a utilizatorilor. Folosind autentificarea, se pot g\u{a}sii mesajele falsificate\cite{Borisov:2004:OCW:1029179.1029200}.
+
+	Aceas\u{a} criptare este disponibil\u{a} \^{i}n mai multe aplica\c{t}ii de chat. Una foarte important\u{a} este Pidgin, aceasta fiind disponibil\u{a} pe Linux, Windows dar \c{s}i pe OS X. Pentru dispozitivele mobile, cum ar fi cele care folosesc ca sistem de operare Android, exist\u{a} ChatSecure. Astfel tot ce trebuie f\u{a}cut este s\u{a} se instaleze aceste aplica\c{t}ii \^{i}n func\c{t}ie de platformele folosite, activat\u{a} op\c{t}iunea de utilizare OTR \c{s}i bine\^{i}n\c{t}eles autentificarea utilizatorului. Alte aplica\c{t}ii Android care folosesc criptarea OTR pentru schimbul de mesaje sunt Xabber \c{s}i Beem. Am\^{a}ndou\u{a} pot fi desc\u{a}rcate \c{s}i folosite gratis.
+
+\subsection{Xabber}
+
+Xabber, este o aplica\c{t}ie Android care folose\c{s}te pe partea de comunica\c{t}ie protocolul XMPP, protocol ce este conceput \^{i}n special pentru schimbul de mesaje \c{s}i este bazat pe limbajul XML. XMPP este un proiect open-source, care este standardizat \c{s}i d\u{a} posibilitatea oricui s\u{a} dezvolte aplica\c{t}ii bazate pe XMPP.
+
+Aceas\c{a} aplica\c{t}ie vine \^{i}nso\c{t}it\u{a} de servicii preconfigurate ce folosesc XMPP \c{s}i ofer\u{a} posibilitatea integr\u{a}rii contactelor din sistemul de operare cu orice cont XMPP. De asemenea este compatibil cu mai multe standarde, precum servere Ejabberd sau Openfire. Schimbul de mesaje se face similar cu Internet Relay Chat(IRC), iar mesajele pot fi criptate folosind OTR \cite{xabber}. 
+
+\subsection{Beem}
+
+Beem, este un proiect open-source care \^{i}si dore\c{s}te s\u{a} ofere posibilitatea de a folosi toate func\c{t}ionalit\u{a}\c{t}ile puse la dispozi\c{t}ie de Jabber \c{s}i XMPP. Este compatibil cu orice standard bazat pe XMPP(Google Talk, Prosody, Openfire).
+
+Aceast\u{a} aplica\c{t}ie ofer\u{a} posibiliatea de a schimba mesaje cu diferite persoane din lista de contacte. Mesajele pot fi criptate folosind OTR \cite{beem}.
+
+\section{PGP}
+
+Criptarea PGP sau criptarea Pretty Good Privacy are la baza un standard numit OpenPGP, care este folosit pentru criptarea de date si semn\u{a}turi digitale. PGP folose\c{s}te at\^{a}t chei publice, c\^{a}t \c{s}i chei private.
+
+	Cu ajutorul cheii publice, se cripteaz\u{a} mesajul, iar cu ajutorul cheii private, se decripteaz\u{a} mesajul. Astfel, fiecare utilizator genereaz\u{a} o cheie public\u{a} pe care o pune la dispozi\c{t}ie altor utilizatori, iar cheia privat\u{a} este \c{t}inut\u{a} secret\u{a}, deci doar cel care de\c{t}ine cheia privata\u{a} poate decripta mesajele. Procesul este reprezentat \^{i}n figura \ref{img:PGP-schema}
+
+\fig[scale=0.5]{src/img/PGP-scheme.png}{img:PGP-schema}{Criptarea PGP}
+
+	Un mare avantaj al folosirii de chei publice este posibilitatea de a utiliza semn\u{a}turi digitale. Cu ajutorul acestora, se pot semna datele transmise, astfel \^{i}nc\^{a}t, orice \^{i}ncercare de falsificare a datelor sau de modificare a datelor este depistat\u{a} foarte u\c{s}or. Semn\u{a}turile digitale sunt create cu ajutorul unor algoritmi matematici care combin\u{a} cheia privat\u{a} cu datele care urmeaz\u{a} s\u{a} fie transmise. Ulterior, dac\u{a} cineva dore\c{s}te s\u{a} verifice autenticitatea datelor primite sau integritatea lor, va aplica pe datele recep\c{t}ionate, cheia public\u{a} a transmi\c{t}\u{a}torului. 
+
+	Pentru a folosi criptarea PGP, \^{i}n primul r\^{a}nd trebuie s\u{a} gener\u{a}m un certificat, care poate s\u{a} con\c{t}in\u{a} date extra, cum ar fi numele, adresa de email sau alte semn\u{a}turi digitale ale altor utilizatori. Un certificat se poate genera pe orice sistem de operare, iar acesta poate fi pus la dispozi\c{t}ia altor oameni, fac\^{a}ndu-le publice pe anumite servere dedicate cum ar fi, serverul pentru chei publice al celor de la MIT.
+
+	Astfel, dac\u{a} cineva inten\c{t}ioneaz\u{a} s\u{a} comunice cu o anumit\u{a} persoan\u{a}, trebuie s\u{a} \^{i}i caute cheia public\u{a} pe aceste servere dedicate, dac\u{a} nu cumva o de\c{t}ine deja. Acum poate cripta mesajul \c{s}i \^{i}l poate trimite. 
+
+	Decriptarea presupune cunoa\c{s}terea unei parole care securizeaz\u{a} cheia privat\u{a}. Deci mesajele recep\c{t}ionate sunt decriptate folosind cheia privat\u{a} de\c{t}inut\u{a}.
+
+%	O problem\u{a} important\u{a} a cript\u{a}rii PGP, este modalitatea de centralizare a cheilor publice. %Cheile publice care sunt \c{t}inute pe anumite servere, pot fi interceptate \^{i}ntr-un atac de tip Man %In The Middle. Astfel un atacator poate r\u{a}spunde \^{i}n locul server-ului \c{s}i s\u{a} furnizeze %cheia sa public\u{a} \c{s}i eventual s\u{a} transmit\u{a} mesajul \^{i}n locul transmi\c{t}\u{a}torului %real. Deci un atacator poate, \^{i}n final s\u{a} ob\c{t}in\u{a} anumite mesaje.
+
+	Pentru schimbul de chei publice exist\u{a} mai multe solu\c{t}ii. O solu\c{t}ie este de a ob\c{t}ine cheia public\u{a} de la partener, chiar \^{i}n persoan\u{a}, dar nu este cea mai comod\u{a} posibil\u{a}. Exist\u{a} conceptul de fingerprint, care reprezint\u{a} un cod hash al certificatului \^{i}n hexazecimal, care poate fi verificat telefonic. O alt\u{a} modalitate este de a ob\c{t}ine cheile publice folosind mai multe surse, verific\^{a}nd dac\u{a} toate coincid.
+
+	Aceast\u{a} criptare este disponibil\u{a} \^{i}n mai multe aplica\c{t}ii care presupun schimb de mesaje. Ca de exemplu, pentru Android exist\u{a} APG, PGP SMS, Symantec PGP Viewer. 
+
+\subsection{Android Privacy Guard}
+
+APG este un proiect gratuit \c{s}i open-source, ce permite criptarea \c{s}i decriptarea de fi\c{s}iere \c{s}i mesaje din email-uri. Pe l\^{a}ng\u{a} criptare \c{s}i decriptarea folosind chei publice \c{s}i chei private, ofer\u{a} \c{s}i posibilitatea de a semna digital fi\c{s}ierele \c{s}i mesajele. De asemenea, se poate folosi \c{s}i criptarea pe baza de chei simetrice. Criptarea bazat\u{a} pe chei publice - private, se realizeaz\u{a} folosind protocolul OpenPGP \cite{apg}.
+
+\subsection{PGP SMS}
+
+Aceast\u{a} aplica\c{t}ie folose\c{s}te criptarea PGP utiliz\^{a}nd chei publice pentru criptare \c{s}i chei private pentru decriptare. Cheia public\u{a} este trimis\u{a} persoanei care dore\c{s}te s\u{a} trimit\u{a} un mesaj criptat. Aceasta cripteaz\u{a} mesajul folosind cheia primit\u{a} \c{s}i transmite mesajul. La recept\c{t}ie, mesajul este decriptat cu ajutorul cheii private \cite{pgpsms}. 
+
+\subsection{PGP Viewer}
+
+PGP Viewer permite decriptarea mesajelor din email-uri, fi\c{s}ierelor sau a ata\c{s}amentelor din emai-uri. Rezultatul decript\u{a}rii este copiat \^{i}n directorul de intr\u{a}re a email-ului. Clientul de email folosit este cel standard al sistemului de operare Android. Astfel nu este necesar\u{a} instalarea de noi aplica\c{t}ii.
+
+Informa\c{t}iile criptate din email sunt disponibile, chiar dac\u{a} utilizatorul nu este conectat la Internet. Aplica\c{t}ia mai ofer\u{a} \c{s}i posibilitatea de a verifica semn\u{a}turile digitale ale datelor, pentru a valida faptul c\u{a} datele nu sunt falsificate \cite{pgpviewer}.

@@ -1,0 +1,51 @@
+\BOOKMARK [0][-]{table.caption.2}{Acknowledgements}{}% 1
+\BOOKMARK [0][-]{chapter*.3}{Abstract}{}% 2
+\BOOKMARK [0][-]{chapter*.5}{Lista de figuri}{}% 3
+\BOOKMARK [0][-]{chapter*.6}{Lista de tabele}{}% 4
+\BOOKMARK [0][-]{chapter.1}{1 Introducere}{}% 5
+\BOOKMARK [1][-]{section.1.1}{1.1 Scopul proiectului}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.2}{1.2 Obiectivele proiectului}{chapter.1}% 7
+\BOOKMARK [0][-]{chapter.2}{2 Aplicatii similare}{}% 8
+\BOOKMARK [1][-]{section.2.1}{2.1 OTR}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.1.1}{2.1.1 Xabber}{section.2.1}% 10
+\BOOKMARK [2][-]{subsection.2.1.2}{2.1.2 Beem}{section.2.1}% 11
+\BOOKMARK [1][-]{section.2.2}{2.2 PGP}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.2.1}{2.2.1 Android Privacy Guard}{section.2.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.2}{2.2.2 PGP SMS}{section.2.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.3}{2.2.3 PGP Viewer}{section.2.2}% 15
+\BOOKMARK [0][-]{chapter.3}{3 Tehnologii folosite}{}% 16
+\BOOKMARK [1][-]{section.3.1}{3.1 Android}{chapter.3}% 17
+\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Prezentare generala}{section.3.1}% 18
+\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Arhitectura Android}{section.3.1}% 19
+\BOOKMARK [2][-]{subsection.3.1.3}{3.1.3 Event Bus}{section.3.1}% 20
+\BOOKMARK [2][-]{subsection.3.1.4}{3.1.4 Notification Listener Service}{section.3.1}% 21
+\BOOKMARK [2][-]{subsection.3.1.5}{3.1.5 Recycler View}{section.3.1}% 22
+\BOOKMARK [1][-]{section.3.2}{3.2 Facebook SDK}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Prezentare generala}{section.3.2}% 24
+\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Graph API}{section.3.2}% 25
+\BOOKMARK [0][-]{chapter.4}{4 Proiectarea arhitecturii}{}% 26
+\BOOKMARK [1][-]{section.4.1}{4.1 Conectarea la reteaua sociala}{chapter.4}% 27
+\BOOKMARK [1][-]{section.4.2}{4.2 Grupuri protejate}{chapter.4}% 28
+\BOOKMARK [1][-]{section.4.3}{4.3 Partajare chei}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.4}{4.4 Conversatii criptate}{chapter.4}% 30
+\BOOKMARK [0][-]{chapter.5}{5 Implementare}{}% 31
+\BOOKMARK [1][-]{section.5.1}{5.1 Implementarea aplicatiei}{chapter.5}% 32
+\BOOKMARK [2][-]{subsection.5.1.1}{5.1.1 Interfata grafica}{section.5.1}% 33
+\BOOKMARK [2][-]{subsection.5.1.2}{5.1.2 Autentificare}{section.5.1}% 34
+\BOOKMARK [2][-]{subsection.5.1.3}{5.1.3 Lista de prieteni}{section.5.1}% 35
+\BOOKMARK [2][-]{subsection.5.1.4}{5.1.4 Grupuri}{section.5.1}% 36
+\BOOKMARK [2][-]{subsection.5.1.5}{5.1.5 Trimitere - Receptie mesaje}{section.5.1}% 37
+\BOOKMARK [1][-]{section.5.2}{5.2 Integrarea criptarii transmisiei de date}{chapter.5}% 38
+\BOOKMARK [2][-]{subsection.5.2.1}{5.2.1 Criptarea}{section.5.2}% 39
+\BOOKMARK [2][-]{subsection.5.2.2}{5.2.2 Decriptarea}{section.5.2}% 40
+\BOOKMARK [0][-]{chapter.6}{6 Testarea si evaluarea solutiei}{}% 41
+\BOOKMARK [1][-]{section.6.1}{6.1 Testarea functionalitatilor}{chapter.6}% 42
+\BOOKMARK [2][-]{subsection.6.1.1}{6.1.1 Login}{section.6.1}% 43
+\BOOKMARK [2][-]{subsection.6.1.2}{6.1.2 Trimitere - Receptie mesaje}{section.6.1}% 44
+\BOOKMARK [2][-]{subsection.6.1.3}{6.1.3 Criptare - Decriptare}{section.6.1}% 45
+\BOOKMARK [1][-]{section.6.2}{6.2 Evaluarea rezultatelor}{chapter.6}% 46
+\BOOKMARK [0][-]{chapter.7}{7 Concluzii}{}% 47
+\BOOKMARK [1][-]{section.7.1}{7.1 Activitati viitoare}{chapter.7}% 48
+\BOOKMARK [0][-]{appendix.A}{A Project Build System Makefiles}{}% 49
+\BOOKMARK [1][-]{section.A.1}{A.1 Makefile.test}{appendix.A}% 50
+\BOOKMARK [0][-]{appendix*.25}{Bibliografie}{}% 51
