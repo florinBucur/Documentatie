@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{xabber}
 \url{http://www.xabber.com}.
@@ -17,6 +17,12 @@
 
 \bibitem{marketShare}
 \url{http://www.androidcentral.com/best-android-phones}.
+
+\bibitem{base64}
+Mohammad~A. AlAhmad, Imad Fakhri~Al Shaikhli, and Hanady~Mohammad Ahmad.
+\newblock Protection of the texts using base64 and md5.
+\newblock {\em Journal of Advanced Computer Science and Technology Research},
+  2(1), 2012.
 
 \bibitem{Borisov:2004:OCW:1029179.1029200}
 Nikita Borisov, Ian Goldberg, and Eric Brewer.

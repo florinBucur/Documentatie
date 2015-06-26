@@ -8,20 +8,47 @@ Datele criptate sunt transmise pe acelea\c{s}i canale folosite \c{s}i de datele 
 
 \section{Conectarea la re\c{t}eaua social\u{a}}
 
-Utilizarea aplica\c{t}iei presupune ca utilizatorul s\u{a} de\c{t}in\u{a} un cont pe re\c{t}eaua de socializare, cu ale c\u{a}rui creden\c{t}iale se poate realiza autentificarea. \^{I}n cazul \^{i}n care contul este setat deja \^{i}n sistemul de operare, acesta se preia automat de c\u{a}tre aplica\c{t}ie \c{s}i se autentific\u{a} utilizatorul. De asemenea, este necesar ca dispozitivul s\u{a} aib\u{a} instalat\u{a} aplica\c{t}ia nativ\u{a} pus\u{a} la dispozi\c{t}ie de platforma re\c{t}elei.
+Utilizarea aplica\c{t}iei presupune ca utilizatorul s\u{a} de\c{t}in\u{a} un cont pe re\c{t}eaua de socializare, cu ale c\u{a}rui creden\c{t}iale se poate realiza autentificarea. \^{I}n cazul \^{i}n care contul este setat deja \^{i}n sistemul de operare, acesta se preia automat de c\u{a}tre aplica\c{t}ie \c{s}i se autentific\u{a} utilizatorul. De asemenea, este necesar ca dispozitivul s\u{a} aib\u{a} instalat\u{a} aplica\c{t}ia nativ\u{a} pus\u{a} la dispozi\c{t}ie de platforma re\c{t}elei. Procesul poate fi urm\u{a}rit \^{i}n figura \ref{img:Login}
 
-Procesul de autentificare printr-o alt\u{a} aplica\c{t}ie dec\^{a}t cea nativ\u{a} necesit\u{a} permisiunea utilizatorului de a accesa anumite date din contul s\u{a}u. Dac\u{a} utilizatorul este de acord cu accesarea datelor de c\u{a}tre aplica\c{t}ie, \^{i}nseamn\u{a} ca procesul s-a terminat cu succes.
+\fig[scale=0.7]{src/img/Login.pdf}{img:Login}{Autentificare}
+
+Procesul de autentificare printr-o alt\u{a} aplica\c{t}ie dec\^{a}t cea nativ\u{a} necesit\u{a} permisiunea utilizatorului de a accesa anumite date din contul s\u{a}u. Dac\u{a} utilizatorul este de acord cu accesarea datelor de c\u{a}tre aplica\c{t}ie, \^{i}nseamn\u{a} ca procesul s-a terminat cu succes. Autentificare se face folosind metodele puse la dispozi\c{t}ie de re\c{t}eaua social\u{a}.
 
 Dac\u{a} autentificare s-a \^{i}ncheiat cu succes, aplica\c{t}ia prime\c{s}te din partea platformei re\c{t}elei sociale un token de acces, care a fost decris \^{i}n sec\c{t}iunea \ref{facebookSDK}. Cu acesta se vor deschide noi sesiuni de comunica\c{t}ie \^{i}ntre aplica\c{t}ia client \c{s}i re\c{t}eaua de socializare.
 
-Dac\u{a} autentificarea s-a \^{i}ncheiat cu succes, utilizatorul poate beneficia de func\c{t}ionalit\u{a}\c{t}ile disponibile. Pentru \^{i}nceput se va afi\c{s}a lista de prieteni care, de asemenea folosesc aceast\u{a} aplica\c{t}ie. Prin selectarea unui prieten, se va deschide o nou\u{a} activitate de unde se pot ini\c{t}ia conversa\c{t}ii sau gestiona grupuri.
-
-Pentru a ini\c{t}ia o conversa\c{t}ie este nevoie de aplica\c{t}ia nativ\u{a} de Messenger a re\c{t}elei de socializare. Mesajul de ini\c{t}iere este "Hello", alt tip de mesaj este ignorat. \^{I}n momentul \^{i}n care mesajul ajunge la destinatar, apare mesajul Hello \c{s}i se \c{s}tie c\u{a} se poate \^{i}ncepe schimbul de mesaje criptate. Cel care a primit mesajul, poate r\u{a}spunde prin completarea unui c\^{a}mp text, ulterior ap\u{a}s\^{a}nd pe un buton.
-
-
-
 \section{Grupuri protejate}
 
-\section{Partajare chei}
+Dup\u{a} procesul de autentificare, utilizatorul poate beneficia de func\c{t}ionalit\u{a}\c{t}ile disponibile. Pentru \^{i}nceput se va afi\c{s}a lista de prieteni care, de asemenea folosesc aceast\u{a} aplica\c{t}ie. Prin selectarea unui prieten, se va deschide o nou\u{a} activitate de unde se pot ini\c{t}ia conversa\c{t}ii sau gestiona grupuri.
+
+Grupurile create de aplica\c{t}ie sunt afi\c{s}ate \^{i}ntr-o list\u{a}. Se ofer\u{a} posibilitatea de a selecta un grup \c{s}i de a aplica pe el o operta\c{t}ie de \c{s}tergere grup, sau ad\u{a}ugare \c{s}i eliminare membrii. De asemenea se pot crea noi grupuri ale aplica\c{t}iei sau se pot vedea mesajele postate pe un grup selectat, eventual se pot posta noi mesaje. Mesajele care sunt postate din aplica\c{t}ie sunt criptate. Utilizarea grupurilor protejate este explicat\u{a} \^{i}n Figura \ref{img:Groups}.
+
+\fig[scale=0.5]{src/img/Gestionare-Grupuri.pdf}{img:Groups}{Gestionare grupuri protejate}
+
+Pentru vizualizarea sau postarea mesajelor este nevoie ca utilizatorul s\u{a} cunoasc\u{a} o cheie de criptare. Aceasta poate fi diferit\u{a} de la grup la grup, astfel este sporit nivelul de securitate.
+
+Dac\u{a} cineva posteaz\u{a} mesaje pe un grup al aceste aplica\c{t}ii, dar folosind un browser sau aplica\c{t}iile native, acele mesaje nu vor putea fi afi\c{s}ate folosind aceast\u{a} aplica\c{t}ie, deoarece decriptarea aplicat\u{a} pe un mesaj \^{i}n clar nu va func\c{t}iona.
+
+Pentru gestionarea grupurilor se folose\c{s}te SKD-ul pus la dispozi\c{t}ie de re\c{t}eaua de socializare. Toate cererile sunt trimise prin intermediul Graph API-ului, prezentat \^{i}n sec\c{t}iunea \ref{graphapi}.
 
 \section{Conversa\c{t}ii criptate}
+
+Pentru a ini\c{t}ia o conversa\c{t}ie este nevoie de aplica\c{t}ia nativ\u{a} de Messenger a re\c{t}elei de socializare. Mesajul de ini\c{t}iere este trimis \^{i}n clar, de aceea acesta ar trebui s\u{a} nu reprezinte informa\c{t}ie relevant\u{a} pentru cineva. \^{I}n momentul \^{i}n care mesajul ajunge la destinatar, apare mesajul de ini\c{t}iere \c{s}i se \c{s}tie c\u{a} se poate \^{i}ncepe schimbul de mesaje criptate. Cel care a primit mesajul, poate r\u{a}spunde prin completarea unui c\^{a}mp text, ulterior ap\u{a}s\^{a}nd pe un buton.
+
+\fig[scale=0.6]{src/img/ConversatiiCriptate.pdf}{img:ConversatiiCriptate}{Schimbul de mesaje}
+
+Dup\u{a} cum se poate observa \^{i}n Figura \ref{img:ConversatiiCriptate}, cheile se pot modifica pe parcursul unei conversa\c{t}ii. Deci f\u{a}r\u{a} o gestiune avansat\u{a} de chei, mesajele schimbate nu vor mai putea fi decriptate \^{i}n viitor, pentru c\u{a} nu se vor mai \c{s}ti cheile de criptate pentru mesaje. De aceea participan\c{t}ii la conversa\c{t}ii pot folosi o singur\u{a} cheie pentru o perioad\u{a} mai lung\u{a} de timp, \^{i}n eventualitatea c\u{a} se va dori decriptarea informa\c{t}iilor.
+
+Conversa\c{t}iile criptate nu folosesc deloc aplica\c{t}iile native de Messenger. Pentru a cripta \c{s}i decripta cu succes mesajele, partenerii trebuie s\u{a} de\c{t}in\u{a} acelea\c{s}i chei. Schimbul de chei va fi prezentat \^{i}n sec\c{t}iunea \ref{chei}.
+
+\^{I}n locul aplica\c{t}iilor native de Messenger, se va folosi un serviciu care intercepteaz\u{a} notific\u{a}rile primite \^{i}n sistemul de operare. Vor fi selectate notific\u{a}rile care vin de la re\c{t}eaua de socializare \c{s}i cele care vin de la prietenul selectat din lista de prieteni care folosesc aplica\c{t}ia.
+
+\section{Partajare chei}
+\label{chei}
+
+Cheile folosite \^{i}n aceasta aplica\c{t}ie sunt simetrice, deci utilizatorii trebuie s\u{a} de\c{t}in\u{a} acelea\c{s}i chei pentru a putea avea o conversa\c{t}ie criptat\u{a} sau pentru a putea posta sau vizualiza mesaje de pe grupuri.
+
+Faptul c\u{a} se \^{i}ncearc\u{a} securizarea unor canale de comunica\c{t}ie nesigure duce la problema schimbului de chei. Este de evitat trimiterea cheilor pe aceste canale nesigure, de aceea vor fi folosite alte modalit\u{a}\c{t}i de comunicare cum ar fi SMS sau coduri QR.
+
+\^{I}n momentul \^{i}n care se dore\c{s}te \^{i}nceperea unei conversa\c{t}ii, partenerii de dialog trebuie s\u{a} cad\u{a} de acord asupra unei chei de criptare. Ace\c{s}tia \^{i}\c{s}i pot comunica cheia prin SMS sau prin intermediul unui cod QR. Pentru schimbul de mesaje, cheile se pot schimba de c\^{a}te ori doresc participan\c{t}ii.
+
+Pentru a posta mesaje criptate sau pentru a citi \c{s}i decripta mesaje din cadrul unui grup protejat, este nevoie ca cei care doresc s\u{a} participe cu informa\c{t}ii s\u{a} afle cheia de criptare. Cheia se transmite tot prin SMS sau coduri QR, dar este transmis\u{a} doar de persoanele care fac parte din grup. Astfel dac\u{a} unui membru i se cere cheia de criptare, acesta poate evalua dac\u{a} persoana care vine cu aceast\u{a} solicitare este \c{s}i ea membru al grupului \c{s}i dac\u{a} este de \^{i}ncredere.

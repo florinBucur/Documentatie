@@ -1,20 +1,26 @@
 \select@language {romanian}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Criptarea OTR \relax }}{3}{figure.caption.7}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Criptarea PGP \relax }}{5}{figure.caption.8}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Criptarea OTR \relax }}{3}{figure.caption.6}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Criptarea PGP \relax }}{5}{figure.caption.7}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Arhitectura Android \relax }}{8}{figure.caption.9}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Principiul de func\c {t}ionare Event Bus \relax }}{9}{figure.caption.10}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces ID-ul aplica\c {t}iei \relax }}{10}{figure.caption.11}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Cheia pentru dezvoltare \relax }}{10}{figure.caption.12}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Token de acces \relax }}{10}{figure.caption.13}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Arhitectura Android \relax }}{8}{figure.caption.8}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Principiul de func\c {t}ionare Event Bus \relax }}{9}{figure.caption.9}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces ID-ul aplica\c {t}iei \relax }}{10}{figure.caption.10}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Cheia pentru dezvoltare \relax }}{10}{figure.caption.11}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Token de acces \relax }}{10}{figure.caption.12}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Arhitectur\IeC {\u a} \relax }}{12}{figure.caption.14}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Arhitectur\IeC {\u a} \relax }}{12}{figure.caption.13}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Autentificare \relax }}{13}{figure.caption.14}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Gestionare grupuri protejate \relax }}{14}{figure.caption.15}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Schimbul de mesaje \relax }}{15}{figure.caption.16}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Interfa\c {t}\u {a} grafic\u {a} \relax }}{15}{figure.caption.15}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Criptarea folosind CBC \relax }}{21}{figure.caption.23}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Decriptarea folosind CBC \relax }}{22}{figure.caption.24}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Interfa\c {t}\u {a} grafic\u {a} \relax }}{18}{figure.caption.17}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Criptarea folosind CBC \relax }}{25}{figure.caption.25}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Decriptarea folosind CBC \relax }}{25}{figure.caption.26}
 \addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Rezultatul autentific\u {a}rii \relax }}{28}{figure.caption.27}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Schimbul de mesaje \relax }}{29}{figure.caption.28}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Mesajele criptate \relax }}{30}{figure.caption.29}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Mesajele criptate de pe un grup \relax }}{31}{figure.caption.30}
 \addvspace {10\p@ }

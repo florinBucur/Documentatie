@@ -9,7 +9,7 @@ Pe scurt, aplica\c{t}ia ofer\u{a} posibilitatea autentific\u{a}rii pe baza datel
 
 Dezvoltarea de aplica\c{t}ii Android este foarte flexibil\u{a} put\^{a}nd implementa un lucru folosind mai multe metode. Flexibilitatea se poate observa \^{i}n faptul c\u{a} partea de interfa\c{t}\u{a} grafic\u{a} poate fi separat\u{a} de partea de cod care implementeaz\u{a} functionalit\u{a}\c{t}ile interfe\c{t}ei grafice. Astfel pentru a dezvolta interfa\c{t}a grafic\u{a} se creaz\u{a} fi\c{s}iere de tip XML \^{i}n care se definesc elementele grafice, c\^{a}t \c{s}i propriet\u{a}\c{t}ile lor, cum ar fi culoare, dimensiune sau pozi\c{t}ionarea sa pe ecran.
 
-	Pentru aceast\u{a} aplica\c{t}ie am creat 6 fi\c{s}iere XML, reprezent\^{a}nd cinci layout-uri ale interfe\c{t}ei grafice: login_fragment.xml, activity_main.xml, activity_friends.xml, friend_row.xml, chat_activity.xml \c{s}i group_row.xml. 
+	Pentru aceast\u{a} aplica\c{t}ie am creat 9 fi\c{s}iere XML, reprezent\^{a}nd layout-urile interfe\c{t}ei grafice: login_fragment.xml, activity_main.xml, activity_friends.xml, activity_groups.xml, chat_activity.xml, friend_row.xml,  group_row.xml, chat_row.xml \c{s}i message_row.xml. 
 	
 	Primul dintre ele este login_fragment.xml, care este folosit pentru fereastra de autentificare \^{i}n aplica\c{t}ie. Acesta este format dintr-un buton de autentificare, buton pus la dispozi\c{t}ie de API-ul de Facebook, un element de tip TextView folosit pentru a afi\c{s}a un mesaj de \^{i}nt\^{a}mpinare dupa ce procesul de autentificare se termin\u{a} cu succes \c{s}i un obiect de tip ProfilePictureView, care este oferit tot de API-ul de Facebook, afi\c{s}\^{a}nd imaginea de profil a utilizatorului proasp\u{a} autentificat. Acestea sunt parte a unui LinearLayout cu orientarea vertical\u{a}.
 
@@ -17,15 +17,23 @@ Dezvoltarea de aplica\c{t}ii Android este foarte flexibil\u{a} put\^{a}nd implem
 	
 	Urmeaz\u{a} activity_friends.xml, care con\c{t}ine doar un element de tip RecyclerView \c{s}i este folosit pentru a afi\c{s}a pe ecran o list\u{a} cu to\c{t}i prietenii care folosesc aceast\u{a} aplica\c{t}ie. Un r\^{a}nd din list\u{a} este reprezentat printr-un layout compus dintr-un element de tip ProfilePictureView, care afi\c{s}eaz\u{a} imaginea de profil al prietenului \c{s}i un element de tip TextView folosit pentru afi\c{s}area numelui prietenului. Prin selectarea unui prieten din aceast\u{a} list\u{a} se deschide o nou\u{a} activitate, care este reprezentat\u{a} prin fi\c{s}ierul chat_activity.xml. 
 	
-	Layout-ul chat_activity.xml este compus dintr-o parte folosit\u{a} pentru chat \c{s}i o parte folosit\u{a} pentru gestionarea de grupuri. Partea de chat con\c{t}ine un element ProfilePictureView pentru imaginea de profil al prietenului, un TextView \^{i}n care apare un mesaj nou primit, un camp EditText \^{i}n care se poate introduce un r\u{a}spuns la un mesaj primit. Pe l\^{a}ng\u{a} acestea mai exist\u{a} doua elemente de tip buton. Unul este "Reply", care prin ap\u{a}sarea lui se trimite r\u{a}spunsul completat \^{i}n EditText persoanei de la care a venit mesajul. Al doilea, "Initiate conversation", care prin ap\u{a}sarea lui se deschide aplica\c{t}ia nativ\u{a} de Facebook Messenger. Astfel se poate ini\c{t}ia o conversa\c{t}ie.
+	Layout-ul chat_activity.xml este compus dintr-o parte folosit\u{a} pentru chat \c{s}i o parte folosit\u{a} pentru gestionarea de grupuri. Partea de chat con\c{t}ine un element ProfilePictureView pentru imaginea de profil al prietenului, un buton, care prin ap\u{a}sarea lui se trimite r\u{a}spunsul completat \^{i}n EditText, persoanei de la care a venit mesajul \c{s}i un buton "Initiate conversation", care prin ap\u{a}sarea lui se deschide aplica\c{t}ia nativ\u{a} de Facebook Messenger. Astfel se poate ini\c{t}ia o conversa\c{t}ie.
 
-\fig[scale=0.15]{src/img/interface.png}{img:Interface}{Interfa\c{t}\u{a} grafic\u{a}}	
-%\newpage
+Fereastra de chat este reprezentat\u{a} \c{s}i ea printr-un obiect RecyclerView, mesajele fiind afi\c{s}ate separat \c{s}i \^{i}n ordinea \^{i}n care au fost create.
+
+\fig[scale=0.55]{src/img/UI.pdf}{img:Interface}{Interfa\c{t}\u{a} grafic\u{a}}	
+\newpage
 	Partea de grupuri are \^{i}n componen\c{t}\u{a} un buton "Create group", care are asociat un camp de tip EditText. \^{I}n momentul \^{i}n care se apas\u{a} butonul se preia textul din c\^{a}mpul text \c{s}i se creaz\u{a} un nou grup al aplica\c{t}iei care va avea numele reg\u{a}sit \^{i}n EditText-ul asociat. De asemenea \c{s}i aici exist\u{a} un element de tip RecyclerView, folosit pentru afi\c{s}area unei liste de grupuri existente, care se poate actualiza \^{i}n func\c{t}ie de opera\c{t}iile efectuate, de exemplu, \^{i}n momentul \^{i}n care se creaz\u{a} un grup nou, lista de grupui se actualizeaz\u{a} imediat ce opera\c{t}ia s-a terminat cu succes. 
 	
-	Fiecare r\^{a}nd din obiectul RecyclerView este reprezentat prin doua elemente de grafic\u{a}. Un element de tip CheckBox, folosit pentru selectarea grupului asupra c\u{a}ruia urmeaz\u{a} s\u{a} se efectueze o ac\c{t}iune \c{s}i un TextView pentru afi\c{s}area numelui grupului. Mai sunt prezente butoane pentru ad\u{a}gare utilizator \^{i}n grupul selectat sau \c{s}tergere din grupul selectat. Persoana care este ad\u{a}ugat\u{a} sau eliminat\u{a} din grup este cea selectat\u{a} din lista de prieteni prezentat\u{a} anterior. Butonul "Delete group" este folosit pentru \c{s}tergerea \^{i}n \^{i}ntregime a unui grup. Butonul "Post to group" are asociat un c\^{a}mp EditText, iar prin ap\u{a}sarea butonului se preia textul tastat \^{i}n acest c\^{a}mp \c{s}i este postat \^{i}n grupul selectat. 
+	Fiecare r\^{a}nd din obiectul RecyclerView folosit pentru lista de grupuri este reprezentat prin trei elemente de grafic\u{a}. Un element de tip CheckBox, folosit pentru selectarea grupului asupra c\u{a}ruia urmeaz\u{a} s\u{a} se efectueze o ac\c{t}iune, un TextView pentru afi\c{s}area numelui grupului \c{s}i un buton pe care dac\u{a} se apas\u{a} se va deschide o nou\u{a} fereastr\u{a} \^{i}n care se reg\u{a}sesc post\u{a}rile din grupul selectat.
 	
-	Pentru implementarea elementelor de tip RecyclerView este necesar\u{a} crearea de mai multe clase. O clas\u{a} care va reprezenta un obiect de tip Adapter ce se va ocupa de ini\c{t}ializarea listei din interfa\c{t}a grafic\u{a}. La crearea acestui obiect trebuie pasate ca argumente o list\u{a} care con\c{t}ine datele ce vor fi afi\c{s}ate \c{s}i contextul \^{i}n care vor fi afi\c{s}ate. De asemenea, ascult\u{a}torii de tip ap\u{a}sare pe un r\^{a}nd al listei sau ap\u{a}sare a unui anumit element dintr-un r\^{a}nd, sunt definite tot \^{i}n aceast\u{a} clas\u{a}. O alt\u{a} clas\u{a} reprezint\u{a} un obiect de tip ViewHolder, care va con\c{t}ine elementele grafice folosite. Un r\^{a}nd din list\u{a} reprezint\u{a} un obiect care cont\c{t}ine informa\c{t}iile ce vor fi completate pe acel r\^{a}nd. 
+	 Mai sunt prezente butoane pentru ad\u{a}gare utilizator \^{i}n grupul selectat sau \c{s}tergere din grupul selectat. Persoana care este ad\u{a}ugat\u{a} sau eliminat\u{a} din grup este cea selectat\u{a} din lista de prieteni prezentat\u{a} anterior. Butonul "Delete group" este folosit pentru \c{s}tergerea \^{i}n \^{i}ntregime a unui grup.  
+	
+Layout-ul activity_groups.xml con\c{t}ine un obiect RecyclerView pentru a afi\c{s}a lista post\u{a}rilor din grupul selectat. Tot aici se reg\u{a}se\c{s}te \c{s}i un buton care are asociat un c\^{a}mp text, folosit pentru a posta un nou mesaj.	
+	
+	Pentru implementarea elementelor de tip RecyclerView este necesar\u{a} crearea de mai multe clase. O clas\u{a} care va reprezenta un obiect de tip Adapter ce se va ocupa de ini\c{t}ializarea listei din interfa\c{t}a grafic\u{a}. La crearea acestui obiect trebuie pasate ca argumente o list\u{a} care con\c{t}ine datele ce vor fi afi\c{s}ate \c{s}i contextul \^{i}n care vor fi afi\c{s}ate. De asemenea, ascult\u{a}torii de tip ap\u{a}sare pe un r\^{a}nd al listei sau ap\u{a}sare a unui anumit element dintr-un r\^{a}nd, sunt definite tot \^{i}n aceast\u{a} clas\u{a}.
+	
+	 O alt\u{a} clas\u{a} reprezint\u{a} un obiect de tip ViewHolder, care va con\c{t}ine elementele grafice folosite. Un r\^{a}nd din list\u{a} reprezint\u{a} un obiect care cont\c{t}ine informa\c{t}iile ce vor fi completate pe acel r\^{a}nd. 
 
 \subsection{Autentificare}
 
@@ -112,14 +120,15 @@ Algoritmul folosit este AES, care reprezint\u{a} un standard ce poate procesa bl
 
 Modul CBC, reprezint\u{a} \^{i}nl\u{a}n\c{t}uirea blocurilor de cifru. Pentru acest mod este necesar un vector de ini\c{t}ializare. \^{I}n criptarea care folose\c{s}te CBC, primul bloc este format prin aplicarea func\c{t}iei logice SAU-exclusiv \^{i}ntre primul bloc de text clar \c{s}i vectorul de ini\c{t}ializare. Primul bloc de text criptat este ob\c{t}inut prin aplicarea algoritmului de criptare pe blocul rezultat din procesul anterior. Urm\u{a}torul bloc este ob\c{t}inut prin aplicarea func\c{t}iei SAU-exclusiv \^{i}ntre primul bloc criptat \c{s}i urm\u{a}torul bloc de text \^{i}n clar \c{s}i a\c{s}a mai departe \cite{Dworkin:2001:SER:2206247}. Procesul de ob\c{t}inere a blocurilor este prezentat \^{i}n figura \ref{img:CBC-C}.
 
-\fig[scale=0.45]{src/img/CBC-C.pdf}{img:CBC-C}{Criptarea folosind CBC}	
+\fig[scale=0.6]{src/img/CBC-C.pdf}{img:CBC-C}{Criptarea folosind CBC}	
 \newpage
 Decriptarea \^{i}n modul CBC se face aplic\^{a}nd func\c{t}ia de decriptare a obiectului Cipher pe primul bloc de text criptat. \^{I}ntre blocul rezultat \c{s}i vectorul de ini\c{t}ializare se aplic\u{a} func\c{t}a logic\u{a} SAU-exclusiv, rezult\^{a}nd primul bloc de text clar. Urm\u{a}torul bloc este ob\c{t}inut prin aplicarea func\c{t}iei de decriptare pe al doilea bloc, iar \^{i}ntre rezultat \c{s}i primul bloc criptat se aplic\u{a} tot func\c{t}ia locic\u{a} SAU-exclusiv \cite{Dworkin:2001:SER:2206247}. Procesul de ob\c{t}inere a blocurilor de text \^{i}n clar este reprezentat \^{i}n figura \ref{img:CBC-D}.
   
-\fig[scale=0.5]{src/img/CBC-D.pdf}{img:CBC-D}{Decriptarea folosind CBC}	
+\fig[scale=0.6]{src/img/CBC-D.pdf}{img:CBC-D}{Decriptarea folosind CBC}	
 
 PKCS5Padding, reprezint\u{a} o schem\u{a} de formatare a unui text, astfel \^{i}nc\^{a}t lungimea acestuia s\u{a} fie multiplu de opt. Trebuie s\u{a} fie multiplu de opt, deoarece un bloc de text are lungimea de opt octe\c{t}i. Este necesar\u{a} aceast\u{a} metod\u{a} de completare a textului p\^{a}n\u{a} dimensiunea lui este multiplu de opt, deoarece se folose\c{s}te modul CBC, care se bazeaz\u{a} pe criptarea \^{i}nl\u{a}n\c{t}uit\u{a} a blocurilor de text.
 
+Criptarea \c{s}i decriptarea unor date, presupune ca acestea s\u{a} fie reprezentate sub form\u{a} de octe\c{t}i, \^{i}n acest caz, vectori de octe\c{t}i. Deoarece informa\c{t}iile sunt transmise folosind protocolul HTTP, datele trimise sau recep\c{t}ionate sunt sub form\u{a} de \c{s}iruri de caractere. De aceea, \^{i}n acest\u{a} aplica\c{t}ie se va folosi codificarea Base64 a datelor\cite{base64}.
 \subsection{Criptarea}
 
 Pentru criptare, se creaz\u{a} un obiect de tip Cipher prin metoda getInstance care prime\c{s}te ca argument \c{s}irul de caractere "AES/CBC/PKCS5Padding", dup\u{a} cum se poate observa \^{i}n sec\c{t}iunea de cod \ref{lst:criptare}. Se instan\c{t}iaz\u{a} un obiect SecretKeySpec din cheia de criptare. \c{S}irurile de caractere nu pot fi procesate direct, ele trebuie convertite la un vector de octe\c{t}i, acest lucru f\u{a}c\^{a}ndu-se cu ajutorul metodei getBytes, c\u{a}ruia se specific\u{a} setul de caractere, \^{i}n acest caz "UTF-8".
@@ -130,8 +139,6 @@ Pentru criptare, se creaz\u{a} un obiect de tip Cipher prin metoda getInstance c
 Cifrul trebuie ini\c{t}ializat, acest lucru realiz\^{a}ndu-se prin metoda init. Aceasta prime\c{s}te ca argumente, modul de ini\c{t}ializare, aici ENCRYPT_MODE, obiectul SecretKeySpec \c{s}i un obiect de tipul IvParameterSpec ce reprezint\u{a} vectorul de ini\c{t}ializare. Este nevoie de acest vector pentru c\u{a} se folose\c{s}te modul CBC, care necesit\u{a} un astfel de obiect pentru a procesa primul bloc din text. \^{I}n aceast\u{a} aplica\c{t}ie vectorul de ini\c{t}ializare are valoarea "AAAAAAAAAAAAAAAA", dar poate avea oricare alt\u{a} valoare.
 
 Rezultatul cript\u{a}rii este un vector de octe\c{t}i, returnat de metoda doFinal a cifrului. Aceast\u{a} metoda prime\c{s}te ca argument textul care urmeaz\u{a} a fi criptat, dar sub form\u{a} de vector de octe\c{t}i. Pentru a ob\c{t}ine un format de afi\c{s}are a vectorului de octe\c{t}i se folose\c{s}te codificare Base64.
-
-Codificarea Base64 este utilizat\u{a} deoarece cereririle care folosesc protocolul HTTP permit trimiterea de date sub form\u{a} de \c{s}ir de caractere, nu sub form\u{a} de vectori de octe\c{t}i.
 
 \subsection{Decriptarea}
 
