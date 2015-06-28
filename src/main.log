@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.4)  8 JUN 2015 01:00
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.4)  27 JUN 2015 23:32
 entering extended mode
 **main.tex
 (C:\Users\bucur\Desktop\diploma\src\main.tex
@@ -25,6 +25,8 @@ No file src/chapters/proiectareaarhitecturii.tex.
 No file src/chapters/implementare.tex.
 \@input{src/chapters/testare.aux}
 No file src/chapters/testare.tex.
+\@input{src/chapters/concluzii.aux}
+No file src/chapters/concluzii.tex.
 )
 ! Emergency stop.
 <*> main.tex
@@ -33,8 +35,8 @@ No file src/chapters/testare.tex.
 
  
 Here is how much of TeX's memory you used:
- 14 strings out of 493921
- 266 string characters out of 3144877
+ 15 strings out of 493921
+ 275 string characters out of 3144877
  49031 words of memory out of 3000000
  3400 multiletter control sequences out of 15000+200000
  3640 words of font info for 14 fonts, out of 3000000 for 9000

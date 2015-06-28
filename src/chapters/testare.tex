@@ -1,5 +1,7 @@
 \chapter{Testarea \c{s}i evaluarea solu\c{t}iei}
 
+Testarea a fost realizat\u{a} pe dispozitive care folosesc Android 5.0.2. Versiunea minim\u{a} de Android pe care poate fi rulat\u{a} aceast\u{a} aplica\c{t}ie este Android 5.0.0 \c{s}i este necesar\u{a} instalarea aplica\c{t}iei Facebook Messenger.
+
 \section{Autentificare}
 
 \fig[scale=0.5]{src/img/testareLogin.pdf}{img:Login-T}{Rezultatul autentific\u{a}rii}
@@ -7,19 +9,70 @@ Faptul c\u{a} fereastra cu lista de prieteni care folosesc aplica\c{t}ia a ap\u{
 
 \section{Trimitere - Recep\c{t}ie mesaje}
 
-\^{I}n Figura \ref{img:Mesaje} se observ\u{a} c\u{a} utilizatorul din st\^{a}nga a ini\c{t}iat conversa\c{t}ia pentru c\u{a} utilizatorul din dreapta a primit mesajul de ini\c{t}ializare "Hello". Primul mesaj criptat trimis este "First message", iar restul mesajelor care urmeaz\u{a} sunt toate criptate. 
+Primul pas pentru schimbul de mesaje este reprezentat de selectarea unui prieten \c{s}i ini\c{t}ierea conversa\c{t}iei care s-a realizat prin ap\u{a}sarea butonului "Initiate Conversation". Acest buton a deschis aplica\c{t}ia nativ\u{a}, Facebook Messenger din care s-a trimis mesajul "Hello". A\c{s}a cum se poate vedea \c{s}i \^{i}n Figura \ref{img:Mesaje}, primul mesaj este cel de ini\c{t}iere a conversa\c{t}iei.
 
-Ini\c{t}ierea conversa\c{t}iei s-a f\u{a}cut prin ap\u{a}sarea butonului "Initiate Conversation", care deschide aplica\c{t}ia nativ\u{a} de Facebook Messenger.
+La receptor se prime\c{s}te o notificare, pe baza c\u{a}reia se r\u{a}spunde cu primul mesaj criptat din conversa\c{t}ie. Acesta se vede \c{s}i \^{i}n Figura \ref{img:Mesaje}, el fiind "First message".
 
-\fig[scale=0.6]{src/img/Mesaje.pdf}{img:Mesaje}{Schimbul de mesaje}
-\newpage
-\section{Criptare - Decriptare}
+R\u{a}spunsurile au fost completate \^{i}n c\^{a}mpul text care se afl\u{a} sub lista de mesaje, iar prin ap\u{a}sarea butonului din dreapta c\^{a}mpului text, mesajul se preia de c\u{a}tre aplica\c{t}ie, este criptat \c{s}i trimis mai departe prin re\c{t}eaua social\u{a}, destinatarului.
 
-\fig[scale=0.6]{src/img/MesajeCriptate.pdf}{img:MesajeCriptate}{Mesajele criptate}
-\newpage
+Schimburile de mesaje sunt salvate pe platforma social\u{a} criptate, a\c{s}a cum se poate observa \^{i}n fereastra din dreapta a Figurii \ref{img:Mesaje}, iar cheile de criptare sunt setate \^{i}n codul aplica\c{t}iei.
+
+\fig[scale=0.64]{src/img/Mesaje.pdf}{img:Mesaje}{Schimbul de mesaje}
 
 \section{Grupuri protejate}
 
-\fig[scale=0.6]{src/img/GrupuriProtejate.pdf}{img:GrupuriProtejate}{Mesajele criptate de pe un grup}
-\newpage
+Lista de grupuri se poate vedea \^{i}n Figura \ref{img:Mesaje}. \^{I}n acest exemplu, s-a ap\u{a}sat pe buton "Open" al grupului denumit "open_group", acest lucru put\^{a}nd fi observat \^{i}n partea de sus a Figurii \ref{img:GrupuriProtejate}, unde este afi\c{s}at numele grupului selectat.
+
+Dup\u{a} cum se poate observa \^{i}n figura \ref{img:GrupuriProtejate}, mesajele postate sunt afi\c{s}ate sub form\u{a} de list\u{a}. Aplica\c{t}ia preia post\u{a}rile din baza de date a platformei sociale, le decripteaz\u{a} \c{s}i le afi\c{s}eaz\u{a}.
+
+Pentru postarea mesajului "Third message", s-a completat c\^{a}mpul text din dreapta butonului "POST TO GROUP", iar prin ap\u{a}sarea lui aplica\c{t}ia preia mesajul, \^{i}l cripteaz\u{a} \c{s}i \^{i}l trimite platformei sociale.
+
+Post\u{a}rile sunt stocate \^{i}n forma criptat\u{a} \^{i}n cadrul re\c{t}elei de socializare, a\c{s}a cum se poate observa \^{i}n fereastra din dreapta Figurii \ref{img:GrupuriProtejate}.
+
+Mesajele au fost criptate cu accea\c{s}i cheie ca \c{s}i mesajele din conversa\c{t}iile protejate, acestea fiind setate direct \^{i}n codul aplica\c{t}iei.
+
+\fig[scale=0.65]{src/img/GrupuriProtejate.pdf}{img:GrupuriProtejate}{Mesajele criptate de pe un grup}
+
 \section{Evaluarea rezultatelor}
+
+Pe l\^{a}ng\u{a} testarea func\c{t}ional\u{a} a aplica\c{t}iei, am \^{i}ncercat s\u{a} demonstrez faptul c\u{a} procesul de criptare sau de decriptarea \^{i}n timp real al unor mesaje de dimensiune mic\u{a}, nu afecteaz\u{a} \^{i}n mod evident schimbul de mesaje.
+
+Astfel, am m\u{a}surat timpul necesar pentru decriptarea, respectiv criptarea unor mesaje cu lungimi diferite, dar nu foarte mari, deoarece reflexul utilizatorilor este de a trimite mesaje c\^{a}t mai scurte.
+
+\begin{center}
+\begin{table}[htb]
+  \caption{Timpi de criptare / decriptare}
+  \begin{tabular}{ | p{4.5cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | }
+  \hline
+Mesaj  & Octe\c{t}i necripta\c{t}i & Octe\c{t}i \newline cripta\c{t}i & Timp \newline criptare & Timp \newline decriptare\\
+    \hline
+   Acesta este un mesaj scurt. 
+ & 27 & 44 & 0.4 ms & 5.4 ms\\
+   \hline
+   Acesta este un mesaj putin mai lung decat primul. 
+ & 49 & 76 & 0.39 ms & 0.25 ms \\
+   \hline
+   Acesta este un mesaj mai lung si decat primul si decat al doilea aproape cat amandoua impreuna. 
+ & 95 & 153 & 0.41 ms & 0.38 ms \\
+   \hline
+   Acesta este un mesaj mai lung si decat primul si decat al doilea aproape cat amandoua impreuna.Acesta este un mesaj mai lung si decat primul si decat al doilea aproape cat amandoua impreuna.Acesta este un mesaj mai lung si decat primul si decat al doilea aproape cat amandoua impreuna. 
+& 285 & 388 & 4.4 ms & 5.2 ms \\
+\hline
+  \end{tabular}
+  \label{table:tabelrezultate}
+\end{table}
+\end{center}
+
+\^{I}n Tabelul \ref{table:tabelrezultate} sunt prezente rezultatele m\u{a}sur\u{a}torilor pentru 3 mesaje. \^{I}n continuare o s\u{a} interpret\u{a}m datele.
+
+Primul r\^{a}nd din tabel reprezint\u{a} un mesaj cu lungimea de 27 de octe\c{t}i, mai exact 216 bi\c{t}i. Deoarece mesajul trebuie s\u{a} fie multiplu de dimensiunea cheii, respectiv 128 de bi\c{t}i, acesta va fi completat p\^{a}n\u{a} la 256 de bi\c{t}i cu terminatorul de \c{s}ir "\textbackslash{}0". Astfel, mesajul transmis metodei care se ocup\u{a} de criptare, va avea 32 de octe\c{t}i. Mesajul rezultat \^{i}n urma cript\u{a}rii va avea tot 32 de octe\c{t}i, dar nu este \^{i}ntr-un format care poate fi afi\c{s}at sau transmis prin HTTP, el fiind doar un vector de octe\c{t}i. Pentru transformarea din vector de octe\c{t}i \^{i}n \c{s}ir de caractere se folose\c{s}te codificarea Base64. \^{I}n urma codific\u{a}rii rezult\u{a} mesajul final, criptat, care poate fi trimis platformei sociale, cu dimensiunea de 44 de octe\c{t}i.
+
+Timpii de criptare, respectiv decriptare sunt destul de mici \c{s}i nu sunt diferen\c{t}e sesizabile \^{i}ntre un mesaj de lungime 27 \c{s}i unul cu lungimea 285. De asemenea, ace\c{s}ti timpi sunt dependen\c{t}i \c{s}i de \^{i}nc\u{a}rcarea procesorului la acel moment.
+
+\subsection{Probleme \^{i}nt\^{a}mpinate}
+
+Principala problem\u{a} \^{i}nt\^{a}mpinat\u{a} a fost faptul c\u{a} cei de la Facebook nu mai permit dezvoltatorilor s\u{a} \^{i}\c{s}i creeze propriile lor aplica\c{t}ii pentru schimbul de mesaje prin intermediul platformei sociale. Datorit\u{a} acestui fapt am g\u{a}sit solu\c{t}ia care se bazeaz\u{a} pe interceptarea \c{s}i gestionarea notific\u{a}rilor din sistemul de operare.
+
+O alt\u{a} problem\u{a} este c\u{a} nu am g\u{a}sit o metod\u{a} de a posta imagini de pe dispozitiv pe grupurile protejate. Cei de la Facebook permit doar postarea de imagini prin intermediul link-urilor WEB, deci nu se pot posta imagini criptate.
+
+Post\u{a}rile de pe grupurile protejate se fac din partea aplica\c{t}iei, ci nu a utilizatorului, deoarece  pe grupurile protejate se poate posta folosind doar token-ul de acces al aplica\c{t}iei, nu al utilizatorului.

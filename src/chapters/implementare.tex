@@ -128,7 +128,12 @@ Decriptarea \^{i}n modul CBC se face aplic\^{a}nd func\c{t}ia de decriptare a ob
 
 PKCS5Padding, reprezint\u{a} o schem\u{a} de formatare a unui text, astfel \^{i}nc\^{a}t lungimea acestuia s\u{a} fie multiplu de opt. Trebuie s\u{a} fie multiplu de opt, deoarece un bloc de text are lungimea de opt octe\c{t}i. Este necesar\u{a} aceast\u{a} metod\u{a} de completare a textului p\^{a}n\u{a} dimensiunea lui este multiplu de opt, deoarece se folose\c{s}te modul CBC, care se bazeaz\u{a} pe criptarea \^{i}nl\u{a}n\c{t}uit\u{a} a blocurilor de text.
 
-Criptarea \c{s}i decriptarea unor date, presupune ca acestea s\u{a} fie reprezentate sub form\u{a} de octe\c{t}i, \^{i}n acest caz, vectori de octe\c{t}i. Deoarece informa\c{t}iile sunt transmise folosind protocolul HTTP, datele trimise sau recep\c{t}ionate sunt sub form\u{a} de \c{s}iruri de caractere. De aceea, \^{i}n acest\u{a} aplica\c{t}ie se va folosi codificarea Base64 a datelor\cite{base64}.
+Criptarea \c{s}i decriptarea unor date, presupune ca acestea s\u{a} fie reprezentate sub form\u{a} de octe\c{t}i, \^{i}n acest caz, vectori de octe\c{t}i. Deoarece informa\c{t}iile sunt transmise folosind protocolul HTTP, datele trimise sau recep\c{t}ionate sunt sub form\u{a} de \c{s}iruri de caractere. De aceea, \^{i}n acest\u{a} aplica\c{t}ie se va folosi codificarea Base64 a datelor ce va fi detaliat\u{a} \^{i}n continuare\cite{base64}.
+
+\^{I}n codificarea Base64, 3 octe\c{t}i de intrare vor fi reprezenta\c{t}i prin 4 octe\c{t}i \cite{base644to3}. Dac\u{a} se dore\c{s}te codificarea unui vector de n octe\c{t}i va rezulta un \c{s}ir de caractere a c\u{a}rui dimensiunea este reprezentat\u{a} \^{i}n urm\u{a}toare schem\u{a}: 
+ \[ octe\text{\c{t}}i[n] \rightarrow caractere\Big[\ceil[\Big]{\frac{4 * n}{3}}\Big] \]
+ 
+ De exemplu, pentru n = 32, rezultatul este 42.6, care este rotunjit superior la cel mai apropiat multiplu de 4, deci \c{s}irul de caractere va avea lungimea de 44 de octe\c{t}i.
 \subsection{Criptarea}
 
 Pentru criptare, se creaz\u{a} un obiect de tip Cipher prin metoda getInstance care prime\c{s}te ca argument \c{s}irul de caractere "AES/CBC/PKCS5Padding", dup\u{a} cum se poate observa \^{i}n sec\c{t}iunea de cod \ref{lst:criptare}. Se instan\c{t}iaz\u{a} un obiect SecretKeySpec din cheia de criptare. \c{S}irurile de caractere nu pot fi procesate direct, ele trebuie convertite la un vector de octe\c{t}i, acest lucru f\u{a}c\^{a}ndu-se cu ajutorul metodei getBytes, c\u{a}ruia se specific\u{a} setul de caractere, \^{i}n acest caz "UTF-8".

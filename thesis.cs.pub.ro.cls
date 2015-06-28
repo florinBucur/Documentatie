@@ -4,7 +4,7 @@
 
 % Copyright notice: you must keep the original author(s)/copyright information in the files
 % Released: 2009-06-23 - v 0.1 (preview and public testing phase)
-
+\usepackage{mathtools}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{thesis.cs.pub.ro}[2008/07/14]
 
@@ -178,7 +178,7 @@
     \addcontentsline{toc}{chapter}{#1}}
 
 \newenvironment{acknowledgements} {
-    \notitlesection{Acknowledgements}
+    \notitlesection{Mul\c{t}umiri}
     \thispagestyle{empty} }
 {\pagestyle{fancy}}
 
@@ -194,10 +194,10 @@
 % (more info: http://www.tug.dk/FontCatalogue/)
 
 % TT font: Courier
-% \usepackage{courier}
+ \usepackage{courier}
 
 % SF font: Helvetica (default document font)
- \usepackage[scaled]{helvet}
+% \usepackage[scaled]{helvet}
 % \renewcommand*\familydefault{\sfdefault}
 
 % command for specifying TODOs

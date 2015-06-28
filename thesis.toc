@@ -1,5 +1,5 @@
 \select@language {romanian}
-\contentsline {chapter}{Acknowledgements}{i}{table.caption.2}
+\contentsline {chapter}{Mul\c {t}umiri}{i}{table.caption.2}
 \contentsline {chapter}{Abstract}{ii}{chapter*.3}
 \contentsline {chapter}{List\u {a} de figuri}{v}{chapter*.5}
 \contentsline {chapter}{\numberline {1}Introducere}{1}{chapter.1}
@@ -25,8 +25,12 @@
 \contentsline {subsection}{\numberline {3.2.2}Graph API}{11}{subsection.3.2.2}
 \contentsline {chapter}{\numberline {4}Proiectarea arhitecturii}{12}{chapter.4}
 \contentsline {section}{\numberline {4.1}Conectarea la re\c {t}eaua social\u {a}}{13}{section.4.1}
-\contentsline {section}{\numberline {4.2}Grupuri protejate}{14}{section.4.2}
-\contentsline {section}{\numberline {4.3}Conversa\c {t}ii criptate}{15}{section.4.3}
+\contentsline {section}{\numberline {4.2}Conversa\c {t}ii criptate}{14}{section.4.2}
+\contentsline {paragraph}{Pasul 1:}{14}{section*.16}
+\contentsline {paragraph}{Pasul 2:}{14}{section*.17}
+\contentsline {paragraph}{Pasul 3:}{14}{section*.18}
+\contentsline {paragraph}{Pasul n:}{15}{section*.19}
+\contentsline {section}{\numberline {4.3}Grupuri protejate}{15}{section.4.3}
 \contentsline {section}{\numberline {4.4}Partajare chei}{16}{section.4.4}
 \contentsline {chapter}{\numberline {5}Implementare}{17}{chapter.5}
 \contentsline {section}{\numberline {5.1}Implementarea aplica\c {t}iei}{17}{section.5.1}
@@ -34,13 +38,13 @@
 \contentsline {subsection}{\numberline {5.1.2}Autentificare}{19}{subsection.5.1.2}
 \contentsline {subsection}{\numberline {5.1.3}List\u {a} de prieteni}{20}{subsection.5.1.3}
 \contentsline {subsection}{\numberline {5.1.4}Grupuri}{20}{subsection.5.1.4}
-\contentsline {subsubsection}{Listarea grupurilor}{21}{section*.18}
-\contentsline {subsubsection}{Crearea}{21}{section*.19}
-\contentsline {subsubsection}{Ad\u {a}ugarea de membri}{21}{section*.20}
-\contentsline {subsubsection}{\c {S}tergerea de membri}{22}{section*.21}
-\contentsline {subsubsection}{\c {S}tergerea de grupuri}{22}{section*.22}
-\contentsline {subsubsection}{Postarea de mesaje text}{22}{section*.23}
-\contentsline {subsubsection}{Listarea post\u {a}rilor}{22}{section*.24}
+\contentsline {subsubsection}{Listarea grupurilor}{21}{section*.22}
+\contentsline {subsubsection}{Crearea}{21}{section*.23}
+\contentsline {subsubsection}{Ad\u {a}ugarea de membri}{21}{section*.24}
+\contentsline {subsubsection}{\c {S}tergerea de membri}{22}{section*.25}
+\contentsline {subsubsection}{\c {S}tergerea de grupuri}{22}{section*.26}
+\contentsline {subsubsection}{Postarea de mesaje text}{22}{section*.27}
+\contentsline {subsubsection}{Listarea post\u {a}rilor}{22}{section*.28}
 \contentsline {subsection}{\numberline {5.1.5}Trimitere - Recep\c {t}ie mesaje}{22}{subsection.5.1.5}
 \contentsline {section}{\numberline {5.2}Integrarea cript\u {a}rii transmisiei de date}{24}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Criptarea}{26}{subsection.5.2.1}
@@ -48,9 +52,9 @@
 \contentsline {chapter}{\numberline {6}Testarea \c {s}i evaluarea solu\c {t}iei}{28}{chapter.6}
 \contentsline {section}{\numberline {6.1}Autentificare}{28}{section.6.1}
 \contentsline {section}{\numberline {6.2}Trimitere - Recep\c {t}ie mesaje}{29}{section.6.2}
-\contentsline {section}{\numberline {6.3}Criptare - Decriptare}{30}{section.6.3}
-\contentsline {section}{\numberline {6.4}Grupuri protejate}{31}{section.6.4}
-\contentsline {section}{\numberline {6.5}Evaluarea rezultatelor}{32}{section.6.5}
+\contentsline {section}{\numberline {6.3}Grupuri protejate}{30}{section.6.3}
+\contentsline {section}{\numberline {6.4}Evaluarea rezultatelor}{31}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Probleme \^{i}nt\^{a}mpinate}{32}{subsection.6.4.1}
 \contentsline {chapter}{\numberline {7}Concluzii}{33}{chapter.7}
-\contentsline {section}{\numberline {7.1}Activit\u {a}\c {t}i viitoare}{33}{section.7.1}
-\contentsline {chapter}{Bibliografie}{34}{chapter*.31}
+\contentsline {section}{\numberline {7.1}Activit\u {a}\c {t}i viitoare}{34}{section.7.1}
+\contentsline {chapter}{Bibliografie}{35}{chapter*.35}
